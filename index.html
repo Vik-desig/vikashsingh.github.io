@@ -1,166 +1,438 @@
-<!DOCTYPE HTML>
-<!--
-    Directive by HTML5 UP
-    html5up.net | @ajlkn
-    Free for personal and commercial use under the CCA 3.0 license
--->
-<html>
-    <head>
-        <title>Vikash Singh | Automation & Analytics Portfolio</title>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-        <link rel="stylesheet" href="assets/css/main.css" />
-    </head>
-    <body class="is-preload">
-
-        <!-- Header -->
-        <div id="header">
-            <span class="logo icon fa-paper-plane"></span>
-            <h1>Hi, I’m Vikash Singh</h1>
-            <p>
-                Data Management & Analytics Specialist<br />
-                Automation • Power BI • Power Automate • Data Governance
-            </p>
+<!doctype html>
+<html lang="en" class="h-full">
+ <head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Data Services Hub</title>
+  <script src="https://cdn.tailwindcss.com/3.4.17"></script>
+  <script src="https://cdn.jsdelivr.net/npm/lucide@0.263.0/dist/umd/lucide.min.js"></script>
+  <script src="/_sdk/element_sdk.js"></script>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&amp;family=Playfair+Display:wght@700;800&amp;display=swap" rel="stylesheet">
+  <style>
+    * { box-sizing: border-box; }
+    .fade-up { opacity: 0; transform: translateY(30px); animation: fadeUp 0.7s ease forwards; }
+    .fade-up-d1 { animation-delay: 0.1s; }
+    .fade-up-d2 { animation-delay: 0.2s; }
+    .fade-up-d3 { animation-delay: 0.3s; }
+    .fade-up-d4 { animation-delay: 0.4s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    @keyframes float { 0%,100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+    .float-anim { animation: float 4s ease-in-out infinite; }
+    .float-anim-d { animation: float 4s ease-in-out 1s infinite; }
+    .service-card { transition: transform 0.3s, box-shadow 0.3s; }
+    .service-card:hover { transform: translateY(-6px); box-shadow: 0 20px 40px rgba(0,0,0,0.15); }
+    .nav-link { position: relative; }
+    .nav-link::after { content:''; position:absolute; bottom:-2px; left:0; width:0; height:2px; background:currentColor; transition:width 0.3s; }
+    .nav-link:hover::after { width:100%; }
+    .toast-show { animation: slideIn 0.4s ease forwards; }
+    @keyframes slideIn { from { transform: translateY(20px); opacity:0; } to { transform: translateY(0); opacity:1; } }
+  </style>
+  <style>body { box-sizing: border-box; }</style>
+  <script src="/_sdk/data_sdk.js" type="text/javascript"></script>
+ <script src="/_sdk/telemetry_sdk.js"></script></head>
+ <body class="h-full">
+  <div id="app" class="w-full h-full overflow-auto" style="font-family:'DM Sans',sans-serif; background:#0d1117; color:#e6edf3;">
+   <!-- Navigation -->
+   <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md" style="background:rgba(13,17,23,0.85); border-bottom:1px solid rgba(230,237,243,0.08);">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+     <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:#58a6ff;">
+       <i data-lucide="database" style="width:18px;height:18px;color:#0d1117;"></i>
+      </div><span class="font-bold text-lg" style="font-family:'Playfair Display',serif;">DataFlow</span>
+     </div>
+     <div class="hidden md:flex items-center gap-8 text-sm">
+      <a href="#services" class="nav-link opacity-80 hover:opacity-100 transition">Services</a> <a href="#portfolio" class="nav-link opacity-80 hover:opacity-100 transition">Portfolio</a> <a href="#about" class="nav-link opacity-80 hover:opacity-100 transition">About</a> <a href="#contact" class="nav-link opacity-80 hover:opacity-100 transition">Contact</a>
+     </div><button id="mobile-menu-btn" class="md:hidden"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>
+    </div>
+   </nav><!-- Mobile Menu -->
+   <div id="mobile-menu" class="fixed inset-0 z-40 hidden" style="background:rgba(13,17,23,0.95);">
+    <div class="flex flex-col items-center justify-center h-full gap-8 text-xl">
+     <a href="#services" class="mobile-nav-link">Services</a> <a href="#portfolio" class="mobile-nav-link">Portfolio</a> <a href="#about" class="mobile-nav-link">About</a> <a href="#contact" class="mobile-nav-link">Contact</a> <button id="mobile-close" class="mt-8 opacity-60"><i data-lucide="x" style="width:32px;height:32px;"></i></button>
+    </div>
+   </div><!-- Hero -->
+   <section class="relative w-full flex items-center justify-center px-6 pt-32 pb-20 md:pt-40 md:pb-32">
+    <div class="absolute inset-0 overflow-hidden pointer-events-none">
+     <div class="absolute top-20 right-10 w-72 h-72 rounded-full opacity-10 blur-3xl" style="background:#58a6ff;"></div>
+     <div class="absolute bottom-10 left-10 w-96 h-96 rounded-full opacity-8 blur-3xl" style="background:#f78166;"></div>
+    </div>
+    <div class="relative max-w-4xl mx-auto text-center">
+     <div class="fade-up inline-flex items-center gap-2 px-4 py-2 rounded-full text-xs font-medium mb-8" style="background:rgba(88,166,255,0.1); border:1px solid rgba(88,166,255,0.25); color:#58a6ff;">
+      <i data-lucide="zap" style="width:14px;height:14px;"></i> Transforming Data Into Decisions
+     </div>
+     <h1 id="hero-title" class="fade-up fade-up-d1 text-4xl md:text-6xl lg:text-7xl font-bold leading-tight mb-6" style="font-family:'Playfair Display',serif;">Automation, Analytics &amp;<br><span style="color:#58a6ff;">Data Governance</span></h1>
+     <p id="hero-subtitle" class="fade-up fade-up-d2 text-lg md:text-xl opacity-70 max-w-2xl mx-auto mb-10">We help enterprises unlock the full potential of their data through intelligent automation, actionable analytics, and robust governance frameworks.</p>
+     <div class="fade-up fade-up-d3 flex flex-col sm:flex-row items-center justify-center gap-4">
+      <a href="#contact" id="cta-btn" class="px-8 py-4 rounded-xl font-semibold text-base transition hover:scale-105" style="background:#58a6ff; color:#0d1117;"> Get Started </a> <a href="#services" class="px-8 py-4 rounded-xl font-semibold text-base transition hover:scale-105" style="border:1px solid rgba(230,237,243,0.2); color:#e6edf3;"> Explore Services </a>
+     </div>
+    </div>
+   </section><!-- Stats -->
+   <section class="w-full px-6 pb-20">
+    <div class="max-w-5xl mx-auto grid grid-cols-2 md:grid-cols-4 gap-6">
+     <div class="text-center p-6 rounded-2xl" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.06);">
+      <div class="text-3xl font-bold" style="color:#58a6ff;">
+       150+
+      </div>
+      <div class="text-sm opacity-60 mt-1">
+       Projects Delivered
+      </div>
+     </div>
+     <div class="text-center p-6 rounded-2xl" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.06);">
+      <div class="text-3xl font-bold" style="color:#58a6ff;">
+       98%
+      </div>
+      <div class="text-sm opacity-60 mt-1">
+       Client Retention
+      </div>
+     </div>
+     <div class="text-center p-6 rounded-2xl" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.06);">
+      <div class="text-3xl font-bold" style="color:#58a6ff;">
+       40%
+      </div>
+      <div class="text-sm opacity-60 mt-1">
+       Avg Cost Reduction
+      </div>
+     </div>
+     <div class="text-center p-6 rounded-2xl" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.06);">
+      <div class="text-3xl font-bold" style="color:#58a6ff;">
+       24/7
+      </div>
+      <div class="text-sm opacity-60 mt-1">
+       Support &amp; Monitoring
+      </div>
+     </div>
+    </div>
+   </section><!-- Services -->
+   <section id="services" class="w-full px-6 py-20">
+    <div class="max-w-6xl mx-auto">
+     <h2 id="services-heading" class="text-3xl md:text-5xl font-bold text-center mb-4" style="font-family:'Playfair Display',serif;">Our Services</h2>
+     <p class="text-center opacity-60 mb-16 max-w-xl mx-auto">End-to-end solutions designed to streamline your data operations and maximize business value.</p>
+     <div class="grid md:grid-cols-3 gap-8">
+      <!-- Automation -->
+      <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim" style="background:rgba(88,166,255,0.15);">
+        <i data-lucide="settings" style="width:28px;height:28px;color:#58a6ff;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-3">Automation</h3>
+       <p class="opacity-60 text-sm leading-relaxed mb-5">Streamline repetitive tasks with intelligent workflow automation. From ETL pipelines to report generation, we eliminate manual bottlenecks.</p>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>Workflow Orchestration</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>ETL Pipeline Design</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>RPA Implementation</li>
+       </ul>
+      </div><!-- Analytics -->
+      <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim-d" style="background:rgba(247,129,102,0.15);">
+        <i data-lucide="bar-chart-2" style="width:28px;height:28px;color:#f78166;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-3">Analytics</h3>
+       <p class="opacity-60 text-sm leading-relaxed mb-5">Transform raw data into strategic insights. Our analytics solutions reveal patterns, predict trends, and drive informed decisions.</p>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>BI Dashboard Design</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>Predictive Modeling</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>Real-time Analytics</li>
+       </ul>
+      </div><!-- Governance -->
+      <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim" style="background:rgba(126,231,135,0.15);">
+        <i data-lucide="shield" style="width:28px;height:28px;color:#7ee687;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-3">Data Governance</h3>
+       <p class="opacity-60 text-sm leading-relaxed mb-5">Establish trust in your data with comprehensive governance frameworks. Ensure quality, compliance, and security across your data estate.</p>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#7ee687;"></i>Data Quality Management</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#7ee687;"></i>Compliance Frameworks</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#7ee687;"></i>Master Data Strategy</li>
+       </ul>
+      </div>
+     </div>
+    </div>
+   </section><!-- Portfolio / Power BI Dashboard -->
+   <section id="portfolio" class="w-full px-6 py-20" style="background:rgba(88,166,255,0.04); border-top:1px solid rgba(88,166,255,0.1); border-bottom:1px solid rgba(88,166,255,0.1);">
+    <div class="max-w-6xl mx-auto">
+     <h2 id="portfolio-heading" class="text-3xl md:text-5xl font-bold text-center mb-4" style="font-family:'Playfair Display',serif;">Our Work</h2>
+     <p id="portfolio-description" class="text-center opacity-60 mb-16 max-w-xl mx-auto">See real-world examples of dashboards and analytics solutions we've built for leading enterprises.</p>
+     <div class="grid md:grid-cols-2 gap-12 items-center mb-20">
+      <div class="rounded-2xl overflow-hidden shadow-2xl" style="border:1px solid rgba(88,166,255,0.2); aspect-ratio:16/9; background:rgba(230,237,243,0.02);"><iframe id="powerbi-dashboard" title="Power BI Dashboard" style="width:100%; height:100%; border:none;" src=""></iframe>
+      </div>
+      <div>
+       <h3 class="text-2xl md:text-3xl font-bold mb-6" style="font-family:'Playfair Display',serif;">Analytics in Action</h3>
+       <p class="opacity-70 mb-6 leading-relaxed">Our interactive dashboards transform complex datasets into clear, actionable insights. Built with industry-leading tools and best practices for real-time monitoring and strategic decision-making.</p>
+       <ul class="space-y-3 text-sm opacity-80">
+        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" style="width:18px;height:18px;color:#58a6ff;flex-shrink:0;margin-top:2px;"></i> <span>Real-time data visualization</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" style="width:18px;height:18px;color:#58a6ff;flex-shrink:0;margin-top:2px;"></i> <span>Custom KPI tracking and reporting</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" style="width:18px;height:18px;color:#58a6ff;flex-shrink:0;margin-top:2px;"></i> <span>Predictive analytics and forecasting</span></li>
+        <li class="flex items-start gap-3"><i data-lucide="check-circle-2" style="width:18px;height:18px;color:#58a6ff;flex-shrink:0;margin-top:2px;"></i> <span>Mobile-responsive design</span></li>
+       </ul>
+      </div>
+     </div>
+     <div class="grid md:grid-cols-3 gap-8">
+      <div class="rounded-2xl p-8 text-center" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <h4 class="font-semibold mb-2">Dashboard Design</h4>
+       <p class="text-sm opacity-60">Custom-built dashboards tailored to your KPIs and business metrics.</p>
+      </div>
+      <div class="rounded-2xl p-8 text-center" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <h4 class="font-semibold mb-2">Data Integration</h4>
+       <p class="text-sm opacity-60">Seamless connection to your data sources for up-to-date insights.</p>
+      </div>
+      <div class="rounded-2xl p-8 text-center" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <h4 class="font-semibold mb-2">Support &amp; Training</h4>
+       <p class="text-sm opacity-60">Expert guidance and ongoing support for your analytics platform.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Team / Professional Profile -->
+   <section class="w-full px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-3xl md:text-5xl font-bold text-center mb-16" style="font-family:'Playfair Display',serif;">Meet the Expert</h2>
+     <div class="grid md:grid-cols-2 gap-12 items-center">
+      <div class="rounded-2xl overflow-hidden shadow-2xl" style="aspect-ratio:1; border:1px solid rgba(88,166,255,0.2);"><img id="professional-image" src="" alt="Professional headshot" loading="lazy" style="width:100%; height:100%; object-fit:cover; background:rgba(230,237,243,0.05);" onerror="console.error('Image failed to load:', this.src); this.style.background='linear-gradient(135deg, #58a6ff 0%, #f78166 100%)'; this.alt='Image unavailable';">
+      </div>
+      <div>
+       <h3 class="text-2xl md:text-3xl font-bold mb-4" style="font-family:'Playfair Display',serif;">Transforming Data into Strategy</h3>
+       <p class="opacity-70 mb-6 leading-relaxed">With years of experience in enterprise data solutions, we've helped Fortune 500 companies and innovative startups unlock the potential of their data. Our data-driven approach ensures measurable results and sustainable growth.</p>
+       <div class="space-y-3">
+        <div class="flex items-center gap-3 text-sm">
+         <i data-lucide="award" style="width:18px;height:18px;color:#58a6ff;"></i> <span>Industry-leading expertise in Data Governance</span>
         </div>
-
-        <!-- Main -->
-        <div id="main">
-
-            <header class="major container medium">
-                <h2>
-                    Driving data‑driven decisions through<br />
-                    Automation, Analytics & Governance
-                </h2>
-                <p>
-                    13+ years of experience delivering scalable BI solutions,
-                    process automation, and global data operations.
-                </p>
-            </header>
-
-            <div class="box alt container">
-
-                <!-- Automation -->
-                <section class="feature left">
-                    <a href="#" class="image icon solid fa-cogs">
-                        <img src="images/pic01.jpg" alt="Automation" />
-                    </a>
-                    <div class="content">
-                        <h3>Process Automation</h3>
-                        <p>
-                            I design and implement automation solutions using Power Automate
-                            and Python to eliminate manual work, improve accuracy, and
-                            accelerate business workflows. Delivered solutions reducing
-                            manual effort by over 40% across global operations.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Analytics -->
-                <section class="feature right">
-                    <a href="#" class="image icon solid fa-chart-bar">
-                        <img src="images/pic02.jpg" alt="Analytics" />
-                    </a>
-                    <div class="content">
-                        <h3>Business Intelligence & Analytics</h3>
-                        <p>
-                            Expert in Power BI data modeling, dashboarding, and executive
-                            reporting. Delivered KPI dashboards and analytics solutions
-                            enabling leadership to track performance, data health,
-                            and improvement opportunities.
-                        </p>
-                    </div>
-                </section>
-
-                <!-- Data Governance -->
-                <section class="feature left">
-                    <a href="#" class="image icon solid fa-database">
-                        <img src="images/pic03.jpg" alt="Data Governance" />
-                    </a>
-                    <div class="content">
-                        <h3>Data Governance & Operations</h3>
-                        <p>
-                            Led global data operations across 40+ markets ensuring
-                            data accuracy, privacy compliance, and standardized processes.
-                            Designed governance frameworks that reduced rework and improved
-                            service delivery.
-                        </p>
-                    </div>
-                </section>
-
-            </div>
-
-            <!-- Call to Action -->
-            <footer class="major container medium">
-                <h3>Let’s Work Together</h3>
-                <p>
-                    Looking for automation, analytics, or data governance solutions?
-                    I help organizations transform data into actionable insights.
-                </p>
-                <ul class="actions special">
-                    <li><a href="#footer" class="button">Contact Me</a></li>
-                </ul>
-            </footer>
-
+        <div class="flex items-center gap-3 text-sm">
+         <i data-lucide="award" style="width:18px;height:18px;color:#58a6ff;"></i> <span>Certified in Advanced Analytics &amp; Automation</span>
         </div>
-
-        <!-- Footer -->
-        <div id="footer">
-            <div class="container medium">
-
-                <header class="major last">
-                    <h2>Get in Touch</h2>
-                </header>
-
-                <p>
-                    Have a project or opportunity in analytics or automation?<br />
-                    I’d be happy to discuss.
-                </p>
-
-                <p>
-                    <strong>Email:</strong> jasrotiavikas5@gmail.com<br />
-                    <strong>LinkedIn:</strong> https://www.linkedin.com
-                </p>
-
-                <form method="post" action="#">
-                    <div class="row">
-                        <div class="col-6 col-12-mobilep">
-                            <input type="text" name="name" placeholder="Name" />
-                        </div>
-                        <div class="col-6 col-12-mobilep">
-                            <input type="email" name="email" placeholder="Email" />
-                        </div>
-                        <div class="col-12">
-                            <textarea name="message" placeholder="Message" rows="6"></textarea>
-                        </div>
-                        <div class="col-12">
-                            <ul class="actions special">
-                                <li><input type="submit" value="Send Message" /></li>
-                            </ul>
-                        </div>
-                    </div>
-                </form>
-
-                <ul class="icons">
-                    <li><a href="https://www.linkedin.com" class="icon brands fa-linkedin">
-                        <span class="label">LinkedIn</span></a></li>
-                    <li><a href="https://github.com/Vik-desig" class="icon brands fa-github">
-                        <span class="label">GitHub</span></a></li>
-                </ul>
-
-                <ul class="copyright">
-                    <li>&copy; Vikash Singh. All rights reserved.</li>
-                    <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
-                </ul>
-
-            </div>
+        <div class="flex items-center gap-3 text-sm">
+         <i data-lucide="award" style="width:18px;height:18px;color:#58a6ff;"></i> <span>1000+ Successful Projects Delivered</span>
         </div>
+       </div>
+      </div>
+     </div>
+    </div>
+   </section><!-- About / Process -->
+   <section id="about" class="w-full px-6 py-20">
+    <div class="max-w-5xl mx-auto">
+     <h2 class="text-3xl md:text-5xl font-bold text-center mb-16" style="font-family:'Playfair Display',serif;">How We Work</h2>
+     <div class="grid md:grid-cols-4 gap-6">
+      <div class="text-center">
+       <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background:#58a6ff; color:#0d1117; font-weight:700;">
+        1
+       </div>
+       <h4 class="font-semibold mb-2">Discover</h4>
+       <p class="text-sm opacity-60">Deep-dive into your data landscape and business objectives.</p>
+      </div>
+      <div class="text-center">
+       <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background:#58a6ff; color:#0d1117; font-weight:700;">
+        2
+       </div>
+       <h4 class="font-semibold mb-2">Design</h4>
+       <p class="text-sm opacity-60">Architect solutions tailored to your unique requirements.</p>
+      </div>
+      <div class="text-center">
+       <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background:#58a6ff; color:#0d1117; font-weight:700;">
+        3
+       </div>
+       <h4 class="font-semibold mb-2">Deliver</h4>
+       <p class="text-sm opacity-60">Implement with precision using agile methodologies.</p>
+      </div>
+      <div class="text-center">
+       <div class="w-12 h-12 rounded-full flex items-center justify-center mx-auto mb-4" style="background:#58a6ff; color:#0d1117; font-weight:700;">
+        4
+       </div>
+       <h4 class="font-semibold mb-2">Optimize</h4>
+       <p class="text-sm opacity-60">Continuous monitoring, refinement, and scale.</p>
+      </div>
+     </div>
+    </div>
+   </section><!-- Contact -->
+   <section id="contact" class="w-full px-6 py-20">
+    <div class="max-w-2xl mx-auto">
+     <h2 id="contact-heading" class="text-3xl md:text-5xl font-bold text-center mb-4" style="font-family:'Playfair Display',serif;">Get In Touch</h2>
+     <p class="text-center opacity-60 mb-12">Ready to transform your data strategy? Let's talk.</p>
+     <form id="contact-form" class="space-y-5 rounded-2xl p-8 md:p-10" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+      <div class="grid md:grid-cols-2 gap-5">
+       <div>
+        <label for="name" class="block text-sm opacity-70 mb-2">Name</label> <input id="name" type="text" required class="w-full px-4 py-3 rounded-lg text-sm outline-none transition focus:ring-2" style="background:rgba(230,237,243,0.05); border:1px solid rgba(230,237,243,0.12); color:#e6edf3; --tw-ring-color:#58a6ff;">
+       </div>
+       <div>
+        <label for="email" class="block text-sm opacity-70 mb-2">Email</label> <input id="email" type="email" required class="w-full px-4 py-3 rounded-lg text-sm outline-none transition focus:ring-2" style="background:rgba(230,237,243,0.05); border:1px solid rgba(230,237,243,0.12); color:#e6edf3; --tw-ring-color:#58a6ff;">
+       </div>
+      </div>
+      <div>
+       <label for="company" class="block text-sm opacity-70 mb-2">Company</label> <input id="company" type="text" class="w-full px-4 py-3 rounded-lg text-sm outline-none transition focus:ring-2" style="background:rgba(230,237,243,0.05); border:1px solid rgba(230,237,243,0.12); color:#e6edf3; --tw-ring-color:#58a6ff;">
+      </div>
+      <div>
+       <label for="service" class="block text-sm opacity-70 mb-2">Service Interested In</label> <select id="service" required class="w-full px-4 py-3 rounded-lg text-sm outline-none transition focus:ring-2" style="background:rgba(230,237,243,0.05); border:1px solid rgba(230,237,243,0.12); color:#e6edf3; --tw-ring-color:#58a6ff;"> <option value="">Select a service</option> <option value="Automation">Automation</option> <option value="Analytics">Analytics</option> <option value="Data Governance">Data Governance</option> <option value="All Services">All Services</option> </select>
+      </div>
+      <div>
+       <label for="message" class="block text-sm opacity-70 mb-2">Message</label> <textarea id="message" rows="4" required class="w-full px-4 py-3 rounded-lg text-sm outline-none transition focus:ring-2 resize-none" style="background:rgba(230,237,243,0.05); border:1px solid rgba(230,237,243,0.12); color:#e6edf3; --tw-ring-color:#58a6ff;"></textarea>
+      </div><button id="submit-btn" type="submit" class="w-full py-4 rounded-xl font-semibold text-base transition hover:scale-[1.02] flex items-center justify-center gap-2" style="background:#58a6ff; color:#0d1117;"> <span id="submit-text">Send Message</span> <span id="submit-spinner" class="hidden">
+        <svg class="animate-spin w-5 h-5" viewbox="0 0 24 24"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="3" fill="none" stroke-dasharray="30 70"></circle>
+        </svg></span> </button>
+     </form>
+     <div id="toast" class="hidden fixed bottom-6 right-6 px-6 py-4 rounded-xl text-sm font-medium shadow-2xl z-50" style="background:#7ee687; color:#0d1117;"></div>
+    </div>
+   </section><!-- Footer -->
+   <footer class="w-full px-6 py-10" style="border-top:1px solid rgba(230,237,243,0.06);">
+    <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm opacity-50">
+     <span>© 2024 DataFlow. All rights reserved.</span>
+     <div class="flex gap-6">
+      <a href="#services" class="hover:opacity-100 transition">Services</a> <a href="#about" class="hover:opacity-100 transition">About</a> <a href="#contact" class="hover:opacity-100 transition">Contact</a>
+     </div>
+    </div>
+   </footer>
+  </div>
+  <script>
+  // Element SDK
+  const defaultConfig = {
+    hero_title: 'Automation, Analytics &<br><span style="color:#58a6ff;">Data Governance</span>',
+    hero_subtitle: 'We help enterprises unlock the full potential of their data through intelligent automation, actionable analytics, and robust governance frameworks.',
+    services_heading: 'Our Services',
+    portfolio_heading: 'Our Work',
+    portfolio_description: 'See real-world examples of dashboards and analytics solutions we\'ve built for leading enterprises.',
+    contact_heading: 'Get In Touch',
+    cta_button_text: 'Get Started',
+    powerbi_embed_url: '',
+    professional_image_url: '',
+    google_sheet_url: 'https://script.google.com/macros/s/AKfycbyzFJIwpKtTHLS_EJ-i3g8dR5iX-r6TM7GY4Gyg_Zt8C4JQHJ-x-v1hrzerbNom7jnO/exec',
+    background_color: '#0d1117',
+    surface_color: '#161b22',
+    text_color: '#e6edf3',
+    primary_action_color: '#58a6ff',
+    secondary_action_color: '#f78166',
+    font_family: 'DM Sans',
+    font_size: 16
+  };
 
-        <!-- Scripts -->
-        <script src="assets/js/jquery.min.js"></script>
-        <script src="assets/js/browser.min.js"></script>
-        <script src="assets/js/breakpoints.min.js"></script>
-        <script src="assets/js/util.js"></script>
-        <script src="assets/js/main.js"></script>
+  function applyConfig(config) {
+    const c = { ...defaultConfig, ...config };
+    document.getElementById('hero-title').innerHTML = c.hero_title;
+    document.getElementById('hero-subtitle').textContent = c.hero_subtitle;
+    document.getElementById('services-heading').textContent = c.services_heading;
+    document.getElementById('portfolio-heading').textContent = c.portfolio_heading;
+    document.getElementById('portfolio-description').textContent = c.portfolio_description;
+    document.getElementById('contact-heading').textContent = c.contact_heading;
+    document.getElementById('cta-btn').textContent = c.cta_button_text;
+    document.getElementById('powerbi-dashboard').src = c.powerbi_embed_url;
+    document.getElementById('professional-image').src = c.professional_image_url;
 
-    </body>
+    const app = document.getElementById('app');
+    app.style.background = c.background_color;
+    app.style.color = c.text_color;
+    app.style.fontFamily = `${c.font_family}, DM Sans, sans-serif`;
+    app.style.fontSize = `${c.font_size}px`;
+
+    document.getElementById('cta-btn').style.background = c.primary_action_color;
+    document.getElementById('submit-btn').style.background = c.primary_action_color;
+
+    document.querySelectorAll('h1,h2,h3').forEach(el => {
+      el.style.fontFamily = `${c.font_family}, Playfair Display, serif`;
+    });
+
+    window.googleSheetUrl = c.google_sheet_url;
+  }
+
+  window.elementSdk.init({
+    defaultConfig,
+    onConfigChange: async (config) => applyConfig(config),
+    mapToCapabilities: (config) => ({
+      recolorables: [
+        { get: () => config.background_color || defaultConfig.background_color, set: (v) => { config.background_color = v; window.elementSdk.setConfig({ background_color: v }); } },
+        { get: () => config.surface_color || defaultConfig.surface_color, set: (v) => { config.surface_color = v; window.elementSdk.setConfig({ surface_color: v }); } },
+        { get: () => config.text_color || defaultConfig.text_color, set: (v) => { config.text_color = v; window.elementSdk.setConfig({ text_color: v }); } },
+        { get: () => config.primary_action_color || defaultConfig.primary_action_color, set: (v) => { config.primary_action_color = v; window.elementSdk.setConfig({ primary_action_color: v }); } },
+        { get: () => config.secondary_action_color || defaultConfig.secondary_action_color, set: (v) => { config.secondary_action_color = v; window.elementSdk.setConfig({ secondary_action_color: v }); } }
+      ],
+      borderables: [],
+      fontEditable: { get: () => config.font_family || defaultConfig.font_family, set: (v) => { config.font_family = v; window.elementSdk.setConfig({ font_family: v }); } },
+      fontSizeable: { get: () => config.font_size || defaultConfig.font_size, set: (v) => { config.font_size = v; window.elementSdk.setConfig({ font_size: v }); } }
+    }),
+    mapToEditPanelValues: (config) => new Map([
+      ['hero_title', config.hero_title || defaultConfig.hero_title],
+      ['hero_subtitle', config.hero_subtitle || defaultConfig.hero_subtitle],
+      ['services_heading', config.services_heading || defaultConfig.services_heading],
+      ['portfolio_heading', config.portfolio_heading || defaultConfig.portfolio_heading],
+      ['portfolio_description', config.portfolio_description || defaultConfig.portfolio_description],
+      ['powerbi_embed_url', config.powerbi_embed_url || defaultConfig.powerbi_embed_url],
+      ['professional_image_url', config.professional_image_url || defaultConfig.professional_image_url],
+      ['contact_heading', config.contact_heading || defaultConfig.contact_heading],
+      ['cta_button_text', config.cta_button_text || defaultConfig.cta_button_text],
+      ['google_sheet_url', config.google_sheet_url || defaultConfig.google_sheet_url]
+    ])
+  });
+
+  // Contact form - Google Sheets
+  const form = document.getElementById('contact-form');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = document.getElementById('submit-btn');
+    const text = document.getElementById('submit-text');
+    const spinner = document.getElementById('submit-spinner');
+    btn.disabled = true;
+    text.textContent = 'Sending...';
+    spinner.classList.remove('hidden');
+
+    const formData = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      company: document.getElementById('company').value,
+      service: document.getElementById('service').value,
+      message: document.getElementById('message').value,
+      submitted_at: new Date().toLocaleString()
+    };
+
+    try {
+      if (!window.googleSheetUrl) {
+        throw new Error('Google Sheet URL not configured');
+      }
+
+      const response = await fetch(window.googleSheetUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: JSON.stringify(formData)
+      });
+
+      btn.disabled = false;
+      text.textContent = 'Send Message';
+      spinner.classList.add('hidden');
+
+      form.reset();
+      const toast = document.getElementById('toast');
+      toast.textContent = '✓ Message sent successfully! We\'ll be in touch soon.';
+      toast.style.background = '#7ee687';
+      toast.classList.remove('hidden');
+      toast.classList.add('toast-show');
+      setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('toast-show'); }, 4000);
+    } catch (error) {
+      btn.disabled = false;
+      text.textContent = 'Send Message';
+      spinner.classList.add('hidden');
+
+      const toast = document.getElementById('toast');
+      toast.textContent = '✗ Something went wrong. Please try again.';
+      toast.style.background = '#f78166';
+      toast.classList.remove('hidden');
+      toast.classList.add('toast-show');
+      setTimeout(() => { toast.classList.add('hidden'); toast.classList.remove('toast-show'); }, 4000);
+    }
+  });
+
+  // Mobile menu
+  document.getElementById('mobile-menu-btn').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.remove('hidden');
+  });
+  document.getElementById('mobile-close').addEventListener('click', () => {
+    document.getElementById('mobile-menu').classList.add('hidden');
+  });
+  document.querySelectorAll('.mobile-nav-link').forEach(link => {
+    link.addEventListener('click', () => document.getElementById('mobile-menu').classList.add('hidden'));
+  });
+
+  // Smooth scroll
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      e.preventDefault();
+      const target = document.querySelector(a.getAttribute('href'));
+      if (target) target.scrollIntoView({ behavior: 'smooth' });
+    });
+  });
+
+  lucide.createIcons();
+</script>
+ <script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'a05e29e85c9ed8ea',t:'MTc4MDQ4NDEwNw=='};var a=document.createElement('script');a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
