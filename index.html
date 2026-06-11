@@ -113,9 +113,12 @@
      <div class="grid md:grid-cols-3 gap-8">
       <!-- Automation -->
       <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
-       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim" style="background:rgba(88,166,255,0.15);">
-        <i data-lucide="settings" style="width:28px;height:28px;color:#58a6ff;"></i>
-       </div>
+        <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim overflow-hidden"
+           style="background:rgba(88,166,255,0.15);">
+        <video class="w-14 h-14 object-contain" autoplay muted loop playsinline>
+          <source src="images/Screen_Recording_20260611_213734_Chrome.mp4" type="video/mp4">
+        </video>
+         </div>
        <h3 class="text-xl font-bold mb-3">Automation</h3>
        <p class="opacity-60 text-sm leading-relaxed mb-5">Streamline repetitive tasks with intelligent workflow automation. From ETL pipelines to report generation, we eliminate manual bottlenecks.</p>
        <ul class="space-y-2 text-sm opacity-70">
