@@ -36,14 +36,11 @@
    <!-- Navigation -->
    <nav class="fixed top-0 left-0 w-full z-50 backdrop-blur-md" style="background:rgba(13,17,23,0.85); border-bottom:1px solid rgba(230,237,243,0.08);">
     <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
-<div class="flex items-center gap-2">
-  <video class="w-12 h-12" autoplay muted loop>
-    <source src="images/Screen_Recording_20260611_213734_Chrome.mp4" type="video/mp4">
-  </video>
-  <span class="font-bold text-lg" style="font-family:'Playfair Display',serif;">
-    DataProSolutions
-  </span>
-</div>
+     <div class="flex items-center gap-2">
+      <div class="w-8 h-8 rounded-lg flex items-center justify-center" style="background:#58a6ff;">
+       <i data-lucide="database" style="width:18px;height:18px;color:#0d1117;"></i>
+      </div><span class="font-bold text-lg" style="font-family:'Playfair Display',serif;">DataFlow</span>
+     </div>
      <div class="hidden md:flex items-center gap-8 text-sm">
       <a href="#services" class="nav-link opacity-80 hover:opacity-100 transition">Services</a> <a href="#portfolio" class="nav-link opacity-80 hover:opacity-100 transition">Portfolio</a> <a href="#about" class="nav-link opacity-80 hover:opacity-100 transition">About</a> <a href="#contact" class="nav-link opacity-80 hover:opacity-100 transition">Contact</a>
      </div><button id="mobile-menu-btn" class="md:hidden"><i data-lucide="menu" style="width:24px;height:24px;"></i></button>
@@ -111,108 +108,36 @@
      <h2 id="services-heading" class="text-3xl md:text-5xl font-bold text-center mb-4" style="font-family:'Playfair Display',serif;">Our Services</h2>
      <p class="text-center opacity-60 mb-16 max-w-xl mx-auto">End-to-end solutions designed to streamline your data operations and maximize business value.</p>
      <div class="grid md:grid-cols-3 gap-8">
-<!-- SERVICES GRID -->
-<div class="grid md:grid-cols-3 gap-8">
-
-  <!-- ✅ Automation -->
-  <div class="service-card rounded-2xl p-8"
-    style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
-
-    <div class="w-12 h-8 rounded-xl flex items-center justify-center mb-6 float-anim overflow-hidden"
-      style="background:rgba(88,166,255,0.15);">
-      <img src="images/Analytics.gif" class="w-12 h-8 object-contain" alt="Automation">
-    </div>
-
-    <h3 class="text-xl font-bold mb-3">Automation</h3>
-
-    <p class="opacity-60 text-sm leading-relaxed mb-5">
-      Streamline repetitive tasks with intelligent workflow automation.
-      From ETL pipelines to report generation.
-    </p>
-
-    <ul class="space-y-2 text-sm opacity-70">
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>
-        Workflow Orchestration
-      </li>
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>
-        ETL Pipeline Design
-      </li>
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>
-        RPA Implementation
-      </li>
-    </ul>
-
-  </div>
-
-
-  <!-- ✅ Analytics -->
-  <div class="service-card rounded-2xl p-8"
-    style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
-
-    <div class="w-12 h-8 rounded-xl flex items-center justify-center mb-6 float-anim overflow-hidden"
-      style="background:rgba(88,166,255,0.15);">
-      <img src="images/Analytics.gif" class="w-12 h-8 object-contain" alt="Analytics">
-    </div>
-
-    <h3 class="text-xl font-bold mb-3">Analytics</h3>
-
-    <p class="opacity-60 text-sm leading-relaxed mb-5">
-      Transform raw data into insights and predictions that drive better decisions.
-    </p>
-
-    <ul class="space-y-2 text-sm opacity-70">
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>
-        BI Dashboard Design
-      </li>
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>
-        Predictive Modeling
-      </li>
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>
-        Real-time Analytics
-      </li>
-    </ul>
-
-  </div>
-
-
-  <!-- ✅ Governance -->
-  <div class="service-card rounded-2xl p-8"
-    style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
-
-    <div class="w-12 h-8 rounded-xl flex items-center justify-center mb-6 float-anim overflow-hidden"
-      style="background:rgba(88,166,255,0.15);">
-      <img src="images/Governance.gif" class="w-12 h-8 object-contain" alt="Governance">
-    </div>
-
-    <h3 class="text-xl font-bold mb-3">Data Governance</h3>
-
-    <p class="opacity-60 text-sm leading-relaxed mb-5">
-      Establish trust, quality, and compliance across your enterprise data.
-    </p>
-
-    <ul class="space-y-2 text-sm opacity-70">
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#7ee687;"></i>
-        Data Quality Management
-      </li>
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#7ee687;"></i>
-        Compliance Frameworks
-      </li>
-      <li class="flex items-center gap-2">
-        <i data-lucide="check" style="width:14px;height:14px;color:#7ee687;"></i>
-        Master Data Strategy
-      </li>
-    </ul>
-
-  </div>
-</div>
+      <!-- Automation -->
+      <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim" style="background:rgba(88,166,255,0.15);">
+        <img src="images/Automation.gif" alt="Service GIF" class="rounded-xl mb-6" style="width:100%; height:120px; object-fit:cover;">
+        <i data-lucide="settings" style="width:28px;height:28px;color:#58a6ff;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-3">Automation</h3>
+       <p class="opacity-60 text-sm leading-relaxed mb-5">Streamline repetitive tasks with intelligent workflow automation. From ETL pipelines to report generation, we eliminate manual bottlenecks.</p>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>Workflow Orchestration</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>ETL Pipeline Design</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#58a6ff;"></i>RPA Implementation</li>
+       </ul>
+      </div><!-- Analytics -->
+      <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim-d" style="background:rgba(247,129,102,0.15);">
+        <i data-lucide="bar-chart-2" style="width:28px;height:28px;color:#f78166;"></i>
+       </div>
+       <h3 class="text-xl font-bold mb-3">Analytics</h3>
+       <p class="opacity-60 text-sm leading-relaxed mb-5">Transform raw data into strategic insights. Our analytics solutions reveal patterns, predict trends, and drive informed decisions.</p>
+       <ul class="space-y-2 text-sm opacity-70">
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>BI Dashboard Design</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>Predictive Modeling</li>
+        <li class="flex items-center gap-2"><i data-lucide="check" style="width:14px;height:14px;color:#f78166;"></i>Real-time Analytics</li>
+       </ul>
+      </div><!-- Governance -->
+      <div class="service-card rounded-2xl p-8" style="background:rgba(230,237,243,0.03); border:1px solid rgba(230,237,243,0.08);">
+       <div class="w-14 h-14 rounded-xl flex items-center justify-center mb-6 float-anim" style="background:rgba(126,231,135,0.15);">
+        <i data-lucide="shield" style="width:28px;height:28px;color:#7ee687;"></i>
+       </div>
        <h3 class="text-xl font-bold mb-3">Data Governance</h3>
        <p class="opacity-60 text-sm leading-relaxed mb-5">Establish trust in your data with comprehensive governance frameworks. Ensure quality, compliance, and security across your data estate.</p>
        <ul class="space-y-2 text-sm opacity-70">
@@ -347,7 +272,7 @@
    </section><!-- Footer -->
    <footer class="w-full px-6 py-10" style="border-top:1px solid rgba(230,237,243,0.06);">
     <div class="max-w-6xl mx-auto flex flex-col md:flex-row items-center justify-between gap-4 text-sm opacity-50">
-     <span>© 2024 DataProSolutions. All rights reserved.</span>
+     <span>© 2024 DataFlow. All rights reserved.</span>
      <div class="flex gap-6">
       <a href="#services" class="hover:opacity-100 transition">Services</a> <a href="#about" class="hover:opacity-100 transition">About</a> <a href="#contact" class="hover:opacity-100 transition">Contact</a>
      </div>
